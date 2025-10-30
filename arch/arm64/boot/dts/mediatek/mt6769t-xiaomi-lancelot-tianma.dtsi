@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: GPL-2.0-only
+/*
+ * Common Device Tree Source for Xiaomi Redmi 9 with Tianma NT36672A panel
+ */
+
+/ {
+	panel: panel@0 {
+		compatible = "tianma,nt36672a-xiaomi-galahad-simple";
+		reg = <0>;
+		power-supply = <&mt6358_vio18_reg>;
+
+		port {
+			panel_in: endpoint {
+				remote-endpoint = <&dsi_out>;
+			};
+		};
+	};
+};

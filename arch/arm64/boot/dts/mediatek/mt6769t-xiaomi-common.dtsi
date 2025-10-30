@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0-only
 /*
- * Device Tree Source for Xiaomi Redmi 9
+ * Common Device Tree Source for Xiaomi Redmi 9
  */
 
 /dts-v1/;
@@ -20,20 +20,6 @@
 		serial0 = &uart0;
 	};
 
-	chosen {
-		stdout-path = &framebuffer0;
-	};
-
-	/* this doesn't work but kept for debugging purposes */
-	framebuffer0: framebuffer@7dcb0000 {
-		//compatible = "simple-framebuffer";
-		reg = <0x0 0x7dcb0000 0x0 0x2250000>;
-		format = "a8r8g8b8";
-		width = <1080>;
-		stride = <((1080 + 8) * 4)>;
-		height = <2340>;
-	};
-
 	memory@40000000 {
 		device_type = "memory";
 		reg = <0x0 0x40000000 0x0 0x3e605000>;
@@ -47,6 +33,7 @@
 /* mt6358_vaud28_reg - audio */
 /* mt6358_vbif28_reg - bluetooth? */
 
+/* TODO: move to the device dt if this is related to the touchscreen or panel */
 &mt6358_vio28_reg {
 	regulator-always-on;
 };
@@ -191,23 +178,11 @@
 	vqmmc-suppply = <&mt6358_vmc_reg>;
 };
 
+/* TODO: move the whole dsi node to the device dt? */
 &dsi0 {
 	status = "okay";
 	#address-cells = <1>;
 	#size-cells = <0>;
-
-	panel: panel@0 {
-		// TODO
-		compatible = "focaltech,ft8719";
-		reg = <0>;
-		power-supply = <&mt6358_vio18_reg>;
-
-		port {
-			panel_in: endpoint {
-				remote-endpoint = <&dsi_out>;
-			};
-		};
-	};
 };
 
 &dsi_out {
@@ -244,31 +219,6 @@
 
 &mfg {
 	domain-supply = <&mt6358_vgpu_reg>;
-};
-
-&i2c0 {
-	status = "okay";
-	#address-cells = <1>;
-	#size-cells = <0>;
-	clock-frequency = <400000>;
-
-	backlight: backlight@36 {
-		compatible = "kinetic,ktd3137";
-		reg = <0x36>;
-		ktd,lsb;
-		ktd,linear;
-		ktd,pwm-frequency = <0x64>;
-		ktd,led-current = <0x98>;
-		ktd,ramp-on-timing = <0x00>;
-		ktd,ramp-off-timing = <0x00>;
-		ktd,pwm-transition = <0x00>;
-		ktd,i2c-transition = <0x00>;
-		ktd,channel = <0x02>;
-		ktd,ovp-level = <0x20>;
-		ktd,switching-frequency = <0x3e8>;
-		ktd,inductor-current = <0xa28>;
-		ktd,flash-timeout = <0x00>;
-	};
 };
 
 &pio {
@@ -383,3 +333,4 @@
 		};
 	};
 };
+
