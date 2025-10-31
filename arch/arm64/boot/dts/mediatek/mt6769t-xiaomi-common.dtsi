@@ -178,13 +178,6 @@
 	vqmmc-suppply = <&mt6358_vmc_reg>;
 };
 
-/* TODO: move the whole dsi node to the device dt? */
-&dsi0 {
-	status = "okay";
-	#address-cells = <1>;
-	#size-cells = <0>;
-};
-
 &dsi_out {
 	remote-endpoint = <&panel_in>;
 };

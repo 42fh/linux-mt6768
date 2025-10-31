@@ -3,7 +3,11 @@
  * Common Device Tree Source for Xiaomi Redmi 9 with Huaxing FT8719 panel
  */
 
-/ {
+&dsi0 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
 	panel: panel@0 {
 		// TODO
 		compatible = "focaltech,ft8719";

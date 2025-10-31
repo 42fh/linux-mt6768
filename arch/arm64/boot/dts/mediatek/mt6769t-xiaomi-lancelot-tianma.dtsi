@@ -3,7 +3,11 @@
  * Common Device Tree Source for Xiaomi Redmi 9 with Tianma NT36672A panel
  */
 
-/ {
+&dsi0 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
 	panel: panel@0 {
 		compatible = "tianma,nt36672a-xiaomi-galahad-simple";
 		reg = <0>;
