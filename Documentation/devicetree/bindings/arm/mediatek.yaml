@@ -60,6 +60,7 @@ properties:
           - const: mediatek,mt6765
       - items:
           - enum:
+              - gigaset,rephone
               - xiaomi,merlin
           - const: mediatek,mt6768
       - items:

@@ -686,6 +686,8 @@ patternProperties:
     description: Giantec Semiconductor, Inc.
   "^giantplus,.*":
     description: Giantplus Technology Co., Ltd.
+  "^gigaset,.*":
+    description: Gigaset
   "^gira,.*":
     description: Gira Giersiepen GmbH & Co. KG
   "^glinet,.*":
