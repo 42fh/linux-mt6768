@@ -5,6 +5,7 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt6768-realme-monet.dtb
 mt6768-xiaomi-merlin-nt36672a-ktd3137-dtbs := mt6768-xiaomi-merlin.dtb \
 	mt6768-xiaomi-merlin-nt36672a.dtbo \
 	mt6768-xiaomi-merlin-ktd3137.dtbo
+dtb-$(CONFIG_ARCH_MEDIATEK) += mt6768-gigaset-rephone.dtb
 dtb-$(CONFIG_ARCH_MEDIATEK) += mt6768-xiaomi-merlin-nt36672a-ktd3137.dtb
 dtb-$(CONFIG_ARCH_MEDIATEK) += mt6779-evb.dtb
 dtb-$(CONFIG_ARCH_MEDIATEK) += mt6795-evb.dtb

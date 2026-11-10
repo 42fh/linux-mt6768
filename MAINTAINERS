@@ -11409,6 +11409,11 @@ L:	platform-driver-x86@vger.kernel.org
 S:	Maintained
 F:	drivers/platform/x86/gigabyte-wmi.c
 
+GIGASET REPHONE
+M:	42fh <telefax-coeval-2m@icloud.com>
+S:	Odd Fixes
+F:	arch/arm64/boot/dts/mediatek/mt6768-gigaset-rephone.dts
+
 GNSS SUBSYSTEM
 M:	Johan Hovold <johan@kernel.org>
 S:	Maintained
